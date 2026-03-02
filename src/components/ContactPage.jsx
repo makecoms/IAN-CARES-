@@ -4,10 +4,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import ContactSection from './ContactSection';
 import SocialSection from './SocialSection';
-import ConsultancyModal from './ConsultancyModal';
 
 const ContactPage = () => {
-    const [isConsultancyModalOpen, setIsConsultancyModalOpen] = useState(false);
 
     return (
         <div className="min-h-screen font-sans text-slate-800 bg-[#E8F6FD]">
@@ -59,11 +57,6 @@ const ContactPage = () => {
             <ContactSection />
             <SocialSection />
             <Footer />
-
-            <ConsultancyModal
-                isOpen={isConsultancyModalOpen}
-                onClose={() => setIsConsultancyModalOpen(false)}
-            />
         </div>
     );
 };
