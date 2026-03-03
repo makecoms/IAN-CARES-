@@ -25,13 +25,15 @@ const API_BASE_URL = 'http://localhost:5000';
 
 const LandingPage = () => {
     const [livesTouched, setLivesTouched] = useState('2,10,000');
+    const [clientRating, setClientRating] = useState('4.8');
 
     useEffect(() => {
         const fetchStats = async () => {
             try {
                 const response = await axios.get(`${API_BASE_URL}/api/settings`);
-                if (response.data && response.data.livesTouched) {
-                    setLivesTouched(response.data.livesTouched);
+                if (response.data) {
+                    if (response.data.livesTouched) setLivesTouched(response.data.livesTouched);
+                    if (response.data.clientRating) setClientRating(response.data.clientRating);
                 }
             } catch (error) {
                 console.error('Error fetching stats:', error);
@@ -114,7 +116,7 @@ const LandingPage = () => {
                             {[
                                 { icon: <Globe className="w-5 h-5" />, label: livesTouched.endsWith('+') ? livesTouched : `${livesTouched}+`, subtext: "Lives Touched" },
                                 { icon: <ShieldCheck className="w-5 h-5" />, label: "100%", subtext: "Private & Secure" },
-                                { icon: <Star className="w-5 h-5 fill-[#FDB913] text-[#FDB913]" />, label: "4.9", subtext: "Client Rating" },
+                                { icon: <Star className="w-5 h-5 fill-[#FDB913] text-[#FDB913]" />, label: clientRating, subtext: "Client Rating" },
                             ].map((stat, idx) => (
                                 <div key={idx} className="flex flex-col gap-1">
                                     <div className="flex items-center gap-2 text-[#1A6B96]">
