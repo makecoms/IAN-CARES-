@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Heart, Users, Sparkles, GraduationCap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ServicesSection = ({ onReadMore, onBook }) => {
     const detailedServices = [
@@ -93,12 +94,13 @@ const ServicesSection = ({ onReadMore, onBook }) => {
                                     >
                                         Read More
                                     </button>
-                                    <button
-                                        onClick={() => onBook(service.title)}
-                                        className="w-full py-4 rounded-xl bg-[#FDB913] text-white font-bold shadow-lg shadow-[#FDB913]/20 hover:bg-[#e5a811] transition-all"
+                                    <Link
+                                        to="/consultation"
+                                        state={{ selectedService: service.title }}
+                                        className="w-full py-4 rounded-xl bg-[#FDB913] text-white font-bold shadow-lg shadow-[#FDB913]/20 hover:bg-[#e5a811] transition-all flex items-center justify-center"
                                     >
                                         Book a Consultation
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>

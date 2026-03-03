@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ServicesHero = ({ onExplore, onBook }) => {
     return (
@@ -40,12 +41,12 @@ const ServicesHero = ({ onExplore, onBook }) => {
                                 Explore the Service
                                 <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                             </button>
-                            <button
-                                onClick={onBook}
+                            <Link
+                                to="/consultation"
                                 className="bg-[#FDB913] text-white px-8 py-4 md:py-5 rounded-full font-bold text-lg shadow-2xl hover:bg-[#e5a811] transition-all transform hover:scale-105"
                             >
                                 Book a Consultancy
-                            </button>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>
