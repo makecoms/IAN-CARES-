@@ -19,10 +19,6 @@ const ServicesPage = () => {
         document.getElementById('detailed-services')?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const openConsultationPage = () => {
-        window.location.href = '/consultation';
-    };
-
     const openDetailModal = (service) => {
         setSelectedService(service);
         setIsDetailModalOpen(true);
@@ -34,7 +30,6 @@ const ServicesPage = () => {
 
             <ServicesHero
                 onExplore={handleExplore}
-                onBook={openConsultationPage}
             />
 
             <HowWeServe
@@ -45,7 +40,6 @@ const ServicesPage = () => {
 
             <ServicesSection
                 onReadMore={openDetailModal}
-                onBook={openConsultationPage}
             />
 
             <Footer />
