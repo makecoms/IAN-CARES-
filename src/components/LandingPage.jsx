@@ -21,7 +21,7 @@ import {
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://ian-cares-backend.vercel.app';
 
 const LandingPage = () => {
     const [livesTouched, setLivesTouched] = useState('2,10,000');

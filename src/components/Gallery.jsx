@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import MobileCarousel from './MobileCarousel';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://ian-cares-backend.vercel.app';
 
 const Gallery = () => {
     const [galleryImages, setGalleryImages] = useState([]);
